@@ -1,0 +1,1 @@
+export const BLOG_API = "https://jsonplaceholder.typicode.com/posts"
