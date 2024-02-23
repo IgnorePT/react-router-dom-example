@@ -18,6 +18,16 @@ import Footer from "./components/layout/Footer/Footer.jsx";
 import Root from "./components/layout/Root/Root.jsx";
 import Blog from "./pages/Blog/Blog.jsx";
 
+/* 
+	Configuração do Router para utilização (Versão 6)
+	- utilizamos a função createBrowserRouter que recebe um array como parametro
+	- O array é de objetos com as seguintes propriedades
+	{
+		path: "caminho que queremos criar"
+		element: elemento que queremos utilizar
+	}
+	- Armazenamos o retorno desta função numa constante router que iremos utilizar como prop
+*/
 const router = createBrowserRouter([
 	{
 		path: "/",
@@ -76,13 +86,17 @@ const router = createBrowserRouter([
 	},
 ]);
 
+/**
+ * Em vez de utilizarmos algum componente nosso criado vamo utilizar um componente fornecido pela biblioteca
+ * - No caso utilizamos o compomponente <RouterProvider />
+ * - Este componente recebe uma prop "router" ao qual passamos o router criado atraves da função createBrowserRouter()
+ */
 ReactDOM.createRoot(document.getElementById("root")).render(
 	<>
 		{/* Versão 6 - React Dom Router (recomendada) */}
 		<RouterProvider router={router} />
 
 		{/* Versão 5 - React Dom Router */}
-
 		{/*
 		<BrowserRouter>
 			{/*  Isto é partilhhado por todas as paginas 
